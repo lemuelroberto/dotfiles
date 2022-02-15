@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Define the workspace directory
+export WORKSPACE=/$HOME/workspace
+
+# Define go path
+export GOPATH=${HOME}/.go
+
+# Add go/bin to path
+export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
+
+# Define default text editor
+export EDITOR=vim
+
+# Define text window's capabilities
+export TERM=vt100
+
+# Enable BuildKit for faster Docker builds
+export DOCKER_BUILDKIT=1
+
+# Config gpg-agent
+GPG_TTY=$(tty)
+export GPG_TTY

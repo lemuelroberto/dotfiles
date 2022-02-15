@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# docker-compose completion
+if [ -f "/usr/share/bash-completion/completions/docker-compose" ];
+    then source "/usr/share/bash-completion/completions/docker-compose";
+fi
+
+# git completion
+if [ -f "/usr/share/git/completion/git-completion.bash" ];
+    then source "/usr/share/git/completion/git-completion.bash";
+fi
