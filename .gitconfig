@@ -1,0 +1,31 @@
+[user]
+    email = lemuelroberto@gmail.com
+    name = Lemuel Roberto Bonifácio
+
+[core]
+    editor = vim
+
+[alias]
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend
+    # Work with the dotfile's bare repository
+    dotfiles = "!f() { git --git-dir=$HOME/repositories/lemuelroberto/dotfiles --work-tree=$HOME $@; }; f"
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[pull]
+    # Rebase on pull
+	rebase = true
+
+# Enforce SSH
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+    pushInsteadOf = https://github.com/
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
+    pushInsteadOf = https://gitlab.com/
+[url "git@bitbucket.org:"]
+    insteadOf = https://bitbucket.org/
+    pushInsteadOf = https://bitbucket.org/
