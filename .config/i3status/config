@@ -63,10 +63,6 @@ disk "/" {
         format = "⛁ %avail"
 }
 
-disk "/mnt/glacier" {
-        format = "⛁ %avail"
-}
-
 volume master {
         format = "%volume ♪"
         format_muted = "muted (%volume) ♪"
