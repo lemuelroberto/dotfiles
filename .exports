@@ -13,7 +13,7 @@ export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
 export EDITOR=vim
 
 # Define text window's capabilities
-export TERM=vt100
+export TERM=xterm-256color
 
 # Enable BuildKit for faster Docker builds
 export DOCKER_BUILDKIT=1
