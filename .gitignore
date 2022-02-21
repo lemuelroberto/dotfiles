@@ -1,2 +1,13 @@
+.bash_history
+.cache/
+.config
+.lesshst
+.local/
+.mozilla/
+.pki/
+.ssh/
+.viminfo
+.vscode-oss/
 .vscode/
+.Xauthority
 dotfiles/
