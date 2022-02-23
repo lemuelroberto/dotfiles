@@ -2,9 +2,13 @@
 
 This is my dotfiles (.files) repository and tooling.
 
-## Setup home as a git bare repository
+## Install
+
+**WARNING** This will wipe your $HOME directory and install this repository
+on it. **DO NOT** run unless you have read through it first.
+
+You may change GIT_SSH_COMMAND: `export GIT_SSH_COMMAND="ssh -i /path/to/ssh-key -F /dev/null"`.
 
 ```bash
-git init --bare $HOME/dotfiles
-git --git-dir=$HOME/dotfiles/ --work-tree=$HOME remote add -f origin git@github.com:lemuelroberto/dotfiles.git
+bash <(curl -sL https://bit.ly/35lzGeX)
 ```

@@ -8,8 +8,6 @@
 [alias]
     # Amend the currently staged files to the latest commit
     amend = commit --amend
-    # Work with the dotfile's bare repository
-    dotfiles = "!f() { git --git-dir=$HOME/repositories/lemuelroberto/dotfiles --work-tree=$HOME $@; }; f"
 
 [help]
 	# Automatically correct and execute mistyped commands
