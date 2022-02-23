@@ -5,3 +5,6 @@ export GOPATH=${HOME}/.go
 
 # Add go/bin to path
 export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
+
+# Add ~/bin to path
+export PATH=${HOME}/bin:${PATH}
