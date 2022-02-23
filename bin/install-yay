@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+trap 'var=s; s=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+
+REPO_URL=https://aur.archlinux.org/yay.git
+
+# Exit if a target directory was not provided
+if [ "$#" -lt 1 ]; then
+  echo >&2 "error: you must provide a non empty parameter with the target directory"
+  exit 1
+fi
+
+# Install yay
+target=$1
+git clone $REPO_URL $target
+cd "$target" || exit 1
+makepkg -si
+
+# Setup yay (https://github.com/Jguer/yay)
+yay -Y --gendb
+yay -Y --devel --batchinstall --save
