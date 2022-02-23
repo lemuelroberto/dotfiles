@@ -12,7 +12,7 @@ PS1="\u@\h \W\$ "
 
 # Source before the following so that all the paths work
 # From Jessie Frazelle at https://github.com/jessfraz/dotfiles under MIT license
-for file in ~/.{paths,aliases,exports,completions}; do
+for file in ~/.{paths,exports,aliases,completions}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"

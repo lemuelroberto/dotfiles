@@ -3,12 +3,6 @@
 # Define the workspace directory
 export WORKSPACE=/$HOME/workspace
 
-# Define go path
-export GOPATH=${HOME}/.go
-
-# Add go/bin to path
-export PATH=/usr/local/go/bin:${GOPATH}/bin:${PATH}
-
 # Define default text editor
 export EDITOR=vim
 
