@@ -4,7 +4,8 @@
 set -euo pipefail
 trap 'var=s; s=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 
-REPO_URL=git@github.com:lemuelroberto/dotfiles.git
+# Accepts REPO_URL in the environment or use default value
+REPO_URL="${REPO_URL:-git@github.com:lemuelroberto/dotfiles.git}"
 
 # Make sure the user wants to remove all files on target
 # WARNING: Reading user input when the script is piped to shell may result in
