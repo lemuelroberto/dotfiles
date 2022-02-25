@@ -15,5 +15,6 @@
     "go.toolsManagement.autoUpdate": true,
     "go.useLanguageServer": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "never"
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "window.zoomLevel": 2
 }
