@@ -3,6 +3,9 @@
 # Define the workspace directory
 export WORKSPACE=/$HOME/workspace
 
+# Define the repositories directory
+export REPOSITORIES=$HOME/repositories
+
 # Define default text editor
 export EDITOR=vim
 
