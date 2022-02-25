@@ -1,5 +1,6 @@
 .bash_history
 .cache/
+.calc_history
 .config
 .gnupg/
 .lesshst
