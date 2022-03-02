@@ -28,4 +28,4 @@ alias gd="git diff"
 alias gl="git log"
 
 # Copy working directory
-alias cpwd="pwd | tr -d "\r\n" | xclip -selection clipboard"
+alias cpwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
