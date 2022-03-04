@@ -8,6 +8,7 @@
 .lesshst
 .local/
 .mozilla/
+.npm/
 .pki/
 .ssh/
 .viminfo
