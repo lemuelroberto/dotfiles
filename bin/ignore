@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+trap 'var=s; s=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+
+exit_with_msg() {
+    echo >&2 "$1"
+    exit 1
+}
+
+# Exit if a target file was not provided
+if [[ "$#" -ne 1 ]]; then
+  exit_with_msg "error: you must provide exactly one parameter with the target file"
+fi
+
+readonly ignored=".gitignore"
+
+# Exit if .gitignore file has changes to be staged
+if [[ -n $(git diff $ignored) ]]; then
+    exit_with_msg "error: you have changes to be staged"
+fi
+
+# Exit if repo has changes to be committed
+if [[ -n $(git diff --staged) ]]; then
+    exit_with_msg "error: you have changes to be committed"
+fi
+
+target=$1
+
+# Normalize directories paths
+if [[ -d "${target}" ]]; then
+    target="${target##\/}" # Remove slash (/) from the beginning
+    target="${target%%\/}" # Remove slash (/) from the ending
+    target="${target}/" # Add slash to the ending
+fi
+
+commit() {
+    git add $ignored
+    git commit -m "$1"
+}
+
+# Create .gitignore file
+if [[ ! -f $ignored ]]; then
+    touch $ignored
+    commit "Add .gitignore file"
+fi
+
+# Sort .gitignore entries
+LC_COLLATE="en_US.UTF-8" sort -fV -o $ignored $ignored
+if [[ -n $(git diff $ignored) ]]; then
+    commit "Sort .gitignore file"
+fi
+
+# Ignore $target file
+echo "${target}" >> $ignored
+LC_COLLATE="en_US.UTF-8" sort -fV -o $ignored $ignored
+if [[ -d "${target}" ]]; then
+    commit "Ignore ${target} files"
+else
+    commit "Ignore ${target} file"
+fi
