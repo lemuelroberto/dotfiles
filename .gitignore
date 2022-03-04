@@ -4,6 +4,7 @@
 .calc_history
 .config
 .gnupg/
+.go/
 .lesshst
 .local/
 .mozilla/
