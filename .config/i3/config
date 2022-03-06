@@ -152,12 +152,13 @@ bindsym $mod+r mode "resize"
 
 # Custom mode to lock screen, logout, hibernate, reboot and shutdown the computer
 # From Michael Daffin at https://gitlab.com/mdaffin/arch-pkgs under MIT license
-set $mode_system System: (l) lock, (e) logout, (r) reboot, (s) shutdown, (c) reload
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (S) shutdown, (c) reload
 mode "$mode_system" {
     bindsym l exec $lock, mode "default"
     bindsym e exit
+    bindsym s exec --no-startup-id $lock -c 000000 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym S exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym c reload
 
     # return to default mode
