@@ -34,10 +34,10 @@ ethernet enp44s0 {
 battery 0 {
         format = "%status %percentage %remaining"
         format_down = "No battery"
-        status_chr = "⚡"
+        status_chr = "C"
         status_bat = "B"
         status_unk = "?"
-        status_full = "☻"
+        status_full = "F"
         low_threshold = 30
         threshold_type = "time"
         path = "/sys/class/power_supply/BAT0/uevent"
@@ -60,12 +60,12 @@ load {
 }
 
 disk "/" {
-        format = "⛁ %avail"
+        format = "D %avail"
 }
 
 volume master {
-        format = "%volume ♪"
-        format_muted = "muted (%volume) ♪"
+        format = "%volume S"
+        format_muted = "muted (%volume) M"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
