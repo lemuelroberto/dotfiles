@@ -18,4 +18,4 @@ if [[ ! -f "${target}" ]]; then
   exit_with_msg "error: the target must be a file"
 fi
 
-cat <<< $(cat "${target}" | jq --sort-keys) > "${target}"
+cat <<< "$(cat "${target}" | jq --sort-keys)" > "${target}"
