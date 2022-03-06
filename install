@@ -28,5 +28,5 @@ rm -rf ./.??* ./* # Remove all files, including the hidden ones
 # Setup repository
 git init
 git remote add -f origin $REPO_URL
-git fetch origin develop:develop
-git checkout develop
+git fetch origin main:main
+git checkout main
