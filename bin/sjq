@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+exit_with_msg() {
+    echo >&2 "$1"
+    exit 1
+}
+
+# Exit if a target file was not provided
+if [[ "$#" -ne 1 ]]; then
+  exit_with_msg "error: you must provide exactly one parameter with the target file"
+fi
+
+target=$1
+
+if [[ ! -f "${target}" ]]; then
+  exit_with_msg "error: the target must be a file"
+fi
+
+cat <<< $(cat "${target}" | jq --sort-keys) > "${target}"
