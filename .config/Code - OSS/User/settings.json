@@ -1,19 +1,27 @@
 {
-    "editor.formatOnPaste": true,
-    "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.rulers": [
-        80
-    ],
-    "editor.snippetSuggestions": "top",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "go.formatTool": "goimports",
-    "go.toolsManagement.autoUpdate": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "never",
-    "window.zoomLevel": 2
+  "editor.formatOnPaste": true,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.rulers": [
+    80
+  ],
+  "editor.snippetSuggestions": "top",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "go.formatTool": "goimports",
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "args": [
+        "-l"
+      ],
+      "path": "/bin/bash"
+    }
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "window.zoomLevel": 2
 }
