@@ -183,8 +183,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightnessctl --class=backlight set +20%
-bindsym XF86MonBrightnessDown exec brightnessctl --class=backlight set 20%-
+bindsym XF86MonBrightnessUp exec brightnessctl --class=backlight set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl --class=backlight set 5%-
 
 # Lock screen
 bindsym $mod+Ctrl+l exec $lock -c 000000
