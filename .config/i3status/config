@@ -12,13 +12,20 @@ general {
 }
 
 order += "battery 0"
+order += "cpu_temperature 0"
 order += "disk /"
 order += "run_watch VPN"
 order += "wireless wlp0s20f3"
 order += "ethernet enp44s0"
-order += "cpu_temperature 0"
 order += "volume master"
 order += "tztime local"
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        format_above_threshold = "T: %degrees °C"
+        max_threshold = 80
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+}
 
 battery 0 {
         format = "%status: %percentage %remaining"
