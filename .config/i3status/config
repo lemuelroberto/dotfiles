@@ -20,53 +20,46 @@ order += "cpu_temperature 0"
 order += "volume master"
 order += "tztime local"
 
-wireless wlp0s20f3 {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
-}
-
-ethernet enp44s0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip"
-        format_down = "E: down"
-}
-
 battery 0 {
-        format = "%status %percentage %remaining"
+        format = "%status: %percentage %remaining"
         format_down = "No battery"
-        status_chr = "C"
-        status_bat = "B"
-        status_unk = "?"
-        status_full = "F"
         low_threshold = 30
-        threshold_type = "time"
         path = "/sys/class/power_supply/BAT0/uevent"
+        status_bat = "B"
+        status_chr = "C"
+        status_full = "F"
+        status_unk = "?"
+        threshold_type = "time"
 }
 
-run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+disk "/" {
+        format = "D: %avail"
 }
+
 
 run_watch VPN {
         pidfile = "/var/run/vpnc/pid"
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M"
+wireless wlp0s20f3 {
+        format_down = "W: down"
+        format_up = "W: (%quality at %essid) %ip"
 }
 
-load {
-        format = "%1min"
-}
-
-disk "/" {
-        format = "D %avail"
+ethernet enp44s0 {
+        # if you use %speed, i3status requires root privileges
+        format_down = "E: down"
+        format_up = "E: %ip"
 }
 
 volume master {
-        format = "%volume S"
-        format_muted = "muted (%volume) M"
         device = "default"
+        format = "S: %volume"
+        format_muted = "M: (%volume)"
         mixer = "Master"
         mixer_idx = 0
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M"
 }
