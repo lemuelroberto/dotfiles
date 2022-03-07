@@ -15,6 +15,7 @@
 .vscode-oss/
 .vscode/
 .Xauthority
+.zoom/
 dotfiles/
 Downloads/
 repositories/
