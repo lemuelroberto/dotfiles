@@ -18,4 +18,5 @@ if [[ ! -f "${target}" ]]; then
   exit_with_msg "error: the target must be a file"
 fi
 
+# shellcheck disable=SC2094,SC2002
 cat <<< "$(cat "${target}" | jq --sort-keys)" > "${target}"
