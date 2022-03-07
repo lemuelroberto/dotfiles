@@ -34,6 +34,8 @@ battery 0 {
 
 disk "/" {
         format = "D: %avail"
+        low_threshold = 30
+        threshold_type = "gbytes_avail"
 }
 
 
