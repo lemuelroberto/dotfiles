@@ -14,6 +14,9 @@
   "go.formatTool": "goimports",
   "go.toolsManagement.autoUpdate": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "php.validate.enable": true,
+  "php.validate.executablePath": "/usr/bin/php",
+  "php.validate.run": "onSave",
   "terminal.integrated.profiles.linux": {
     "bash": {
       "args": [
