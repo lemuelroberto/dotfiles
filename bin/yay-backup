@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage="
+Usage: $(basename "$0") [OPTIONS]
+
+PARAMETERS:
+  -f, --file <file>            Required path to backup or to restore from
+  -i, --instal                 Install AUR packages from file
+  -b, --backup                 Backup AUR (foreign) packages to file
+  -h, --help                   Print this help
+"
+
+help_and_exit() {
+  echo "$usage"
+  exit 0
+}
+
+exit_with_msg() {
+    echo >&2 "$1"
+    exit 1
+}
+
+exit_with_msg_and_help() {
+  echo >&2 "$1"
+  echo >&2 "$usage"
+  exit 1
+}
+
+# Read arguments
+# Read the getopt manual using man getopt
+# Learn from examples in /usr/share/doc/util-linux/
+opts=$(getopt \
+  --name "$(basename "$0")" \
+  --longoptions "file:,install,backup,help" \
+  --options "f:ibh" \
+  -- "$@"
+)
+
+# The eval is required as arguments returned by getopt are quoted.
+eval set -- "$opts"
+unset opts
+
+while true; do
+  case "$1" in
+    "-f"|"--file")
+      file=$2
+      shift 2
+      continue
+    ;;
+
+    "-i"|"--install")
+      install=true
+      shift 1
+      continue
+    ;;
+
+    "-b"|"--backup")
+      backup=true
+      shift 1
+      continue
+    ;;
+
+    "-h"|"--help")
+      help_and_exit
+    ;;
+
+    "--")
+			shift
+			break
+		;;
+
+    *)
+      exit_with_msg "getopt: unexpected error: $1"
+      ;;
+  esac
+done
+
+if [[ -z ${file+x} ]]; then
+  exit_with_msg_and_help "error: you must provide the file option"
+fi
+
+if [[ -z ${install+x} && -z ${backup+x} ]]; then
+  exit_with_msg_and_help "error: you must provide either the install or backup option"
+fi
+
+if [[ -n ${backup+x} && "$backup" = true ]]; then
+  pacman -Qqm | grep -v yay > "$file"
+elif [[ -n ${install+x} && "$install" = true ]]; then
+  if [[ ! -f "$file" ]]; then
+    exit_with_msg "error: file $file does not exists"
+  fi
+  yay -S --needed --noconfirm - < "$file"
+fi
