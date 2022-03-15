@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
 usage="
 Usage: $(basename "$0") [OPTIONS]

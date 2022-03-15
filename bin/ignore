@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-trap 'var=s; s=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
 exit_with_msg() {
     echo >&2 "$1"
