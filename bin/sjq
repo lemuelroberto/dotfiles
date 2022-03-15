@@ -4,8 +4,8 @@ set -euEo pipefail
 trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
 exit_with_msg() {
-    echo >&2 "$1"
-    exit 1
+  echo >&2 "$1"
+  exit 1
 }
 
 # Exit if a target file was not provided

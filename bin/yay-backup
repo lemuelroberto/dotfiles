@@ -45,32 +45,32 @@ unset opts
 
 while true; do
   case "$1" in
-    "-f"|"--file")
+    -f|--file)
       file="$2"
       shift 2
       continue
-    ;;
+      ;;
 
-    "-i"|"--install")
+    -i|--install)
       install=true
       shift 1
       continue
-    ;;
+      ;;
 
-    "-b"|"--backup")
+    -b|--backup)
       backup=true
       shift 1
       continue
-    ;;
+      ;;
 
-    "-h"|"--help")
+    -h|--help)
       help_and_exit
-    ;;
+      ;;
 
-    "--")
-			shift
-			break
-		;;
+    --)
+      shift
+      break
+      ;;
 
     *)
       exit_with_msg "getopt: unexpected error: $1"

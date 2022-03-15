@@ -3,11 +3,11 @@
 
 # Source .bashrc file
 if [[ -r "${HOME}/.bashrc" ]]; then
-	# shellcheck source=/dev/null
-	source "${HOME}/.bashrc"
+  # shellcheck source=/dev/null
+  source "${HOME}/.bashrc"
 fi
 
 # Execute startx if on TTY 1
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
+  exec startx
 fi
