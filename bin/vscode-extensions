@@ -46,7 +46,7 @@ unset opts
 while true; do
   case "$1" in
     "-f"|"--file")
-      file=$2
+      file="$2"
       shift 2
       continue
     ;;

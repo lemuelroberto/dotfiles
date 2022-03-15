@@ -5,7 +5,7 @@ set -euEo pipefail
 trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
 # Accepts REPO_URL in the environment or use default value
-REPO_URL="${REPO_URL:-git@github.com:lemuelroberto/dotfiles.git}"
+readonly REPO_URL="${REPO_URL:-git@github.com:lemuelroberto/dotfiles.git}"
 
 # Make sure the user wants to remove all files on target
 # WARNING: Reading user input when the script is piped to shell may result in
@@ -17,7 +17,7 @@ echo "Will remove all files on $HOME"
 read -p "Are you sure? " -n 1 -r < /dev/tty
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Exiting without setting up dotfiles"
+    echo >&2 "Exiting without setting up dotfiles"
     exit 1
 fi
 
@@ -27,6 +27,6 @@ rm -rf ./.??* ./* # Remove all files, including the hidden ones
 
 # Setup repository
 git init
-git remote add -f origin $REPO_URL
+git remote add -f origin "$REPO_URL"
 git fetch origin main:main
 git checkout main

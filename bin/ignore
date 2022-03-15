@@ -13,10 +13,10 @@ if [[ "$#" -ne 1 ]]; then
   exit_with_msg "error: you must provide exactly one parameter with the target file"
 fi
 
-readonly ignored=".gitignore"
+readonly IGNORED=".gitignore"
 
 # Exit if .gitignore file has changes to be staged
-if [[ -n $(git diff $ignored) ]]; then
+if [[ -n $(git diff "$IGNORED") ]]; then
     exit_with_msg "error: you have changes to be staged"
 fi
 
@@ -25,7 +25,7 @@ if [[ -n $(git diff --staged) ]]; then
     exit_with_msg "error: you have changes to be committed"
 fi
 
-target=$1
+target="$1"
 
 # Normalize directories paths
 if [[ -d "${target}" ]]; then
@@ -35,25 +35,25 @@ if [[ -d "${target}" ]]; then
 fi
 
 commit() {
-    git add $ignored
+    git add "$IGNORED"
     git commit -m "$1"
 }
 
 # Create .gitignore file
-if [[ ! -f $ignored ]]; then
-    touch $ignored
+if [[ ! -f "$IGNORED" ]]; then
+    touch "$IGNORED"
     commit "Add .gitignore file"
 fi
 
 # Sort .gitignore entries
-LC_COLLATE="en_US.UTF-8" sort -fV -o $ignored $ignored
-if [[ -n $(git diff $ignored) ]]; then
+LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
+if [[ -n $(git diff "$IGNORED") ]]; then
     commit "Sort .gitignore file"
 fi
 
 # Ignore $target file
-echo "${target}" >> $ignored
-LC_COLLATE="en_US.UTF-8" sort -fV -o $ignored $ignored
+echo "${target}" >> "$IGNORED"
+LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
 if [[ -d "${target}" ]]; then
     commit "Ignore ${target} files"
 else

@@ -13,7 +13,7 @@ if [[ "$#" -ne 1 ]]; then
   exit_with_msg "error: you must provide exactly one parameter with the target file"
 fi
 
-target=$1
+readonly target="$1"
 
 if [[ ! -f "${target}" ]]; then
   exit_with_msg "error: the target must be a file"

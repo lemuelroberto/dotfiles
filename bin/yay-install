@@ -3,7 +3,7 @@
 set -euEo pipefail
 trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
-REPO_URL=https://aur.archlinux.org/yay.git
+readonly REPO_URL="https://aur.archlinux.org/yay.git"
 
 # Exit if a target directory was not provided
 if [ "$#" -lt 1 ]; then
@@ -12,8 +12,8 @@ if [ "$#" -lt 1 ]; then
 fi
 
 # Install yay
-target=$1
-git clone $REPO_URL "$target"
+readonly target="$1"
+git clone "$REPO_URL" "$target"
 cd "$target" || exit 1
 makepkg -si
 
