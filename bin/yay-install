@@ -13,7 +13,7 @@ fi
 
 # Install yay
 target=$1
-git clone $REPO_URL $target
+git clone $REPO_URL "$target"
 cd "$target" || exit 1
 makepkg -si
 
