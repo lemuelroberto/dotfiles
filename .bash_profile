@@ -1,3 +1,4 @@
+#!/bin/bash
 # source for ~/.bash_profile
 # interactive, non-login shells do not source this config
 
