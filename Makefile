@@ -3,6 +3,12 @@ BASH_SCRIPTS = .bash_profile .bashrc .bashrc_sources/* bin/* install
 shellcheck:
 	shellcheck $(BASH_SCRIPTS)
 
+shfmt-edit:
+	shfmt -i 2 -ci -bn -sr -l -w $(BASH_SCRIPTS)
+
+shfmt-diff:
+	shfmt -i 2 -ci -bn -sr -l -d $(BASH_SCRIPTS)
+
 backup:
 	vscode-extensions -b -f .config/backup/vscode-extensions.list
 	yay-backup -b -f .config/backup/yay-packages.list
