@@ -1,11 +1,7 @@
+BASH_SCRIPTS = .bash_profile .bashrc .bashrc_sources/* bin/* install
+
 shellcheck:
-	shellcheck \
-		.bash_profile \
-		.bashrc \
-		.bashrc_sources/* \
-		bin/* \
-		install \
-	;
+	shellcheck $(BASH_SCRIPTS)
 
 backup:
 	vscode-extensions -b -f .config/backup/vscode-extensions.list
