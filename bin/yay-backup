@@ -19,8 +19,8 @@ help_and_exit() {
 }
 
 exit_with_msg() {
-    echo >&2 "$1"
-    exit 1
+  echo >&2 "$1"
+  exit 1
 }
 
 exit_with_msg_and_help() {
@@ -32,11 +32,12 @@ exit_with_msg_and_help() {
 # Read arguments
 # Read the getopt manual using man getopt
 # Learn from examples in /usr/share/doc/util-linux/
-opts=$(getopt \
-  --name "$(basename "$0")" \
-  --longoptions "file:,install,backup,help" \
-  --options "f:ibh" \
-  -- "$@"
+opts=$(
+  getopt \
+    --name "$(basename "$0")" \
+    --longoptions "file:,install,backup,help" \
+    --options "f:ibh" \
+    -- "$@"
 )
 
 # The eval is required as arguments returned by getopt are quoted.
@@ -45,25 +46,25 @@ unset opts
 
 while true; do
   case "$1" in
-    -f|--file)
+    -f | --file)
       file="$2"
       shift 2
       continue
       ;;
 
-    -i|--install)
+    -i | --install)
       install=true
       shift 1
       continue
       ;;
 
-    -b|--backup)
+    -b | --backup)
       backup=true
       shift 1
       continue
       ;;
 
-    -h|--help)
+    -h | --help)
       help_and_exit
       ;;
 

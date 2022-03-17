@@ -17,45 +17,45 @@ readonly IGNORED=".gitignore"
 
 # Exit if .gitignore file has changes to be staged
 if [[ -n $(git diff "$IGNORED") ]]; then
-    exit_with_msg "error: you have changes to be staged"
+  exit_with_msg "error: you have changes to be staged"
 fi
 
 # Exit if repo has changes to be committed
 if [[ -n $(git diff --staged) ]]; then
-    exit_with_msg "error: you have changes to be committed"
+  exit_with_msg "error: you have changes to be committed"
 fi
 
 target="$1"
 
 # Normalize directories paths
 if [[ -d "${target}" ]]; then
-    target="${target##\/}" # Remove slash (/) from the beginning
-    target="${target%%\/}" # Remove slash (/) from the ending
-    target="${target}/" # Add slash to the ending
+  target="${target##\/}" # Remove slash (/) from the beginning
+  target="${target%%\/}" # Remove slash (/) from the ending
+  target="${target}/"    # Add slash to the ending
 fi
 
 commit() {
-    git add "$IGNORED"
-    git commit -m "$1"
+  git add "$IGNORED"
+  git commit -m "$1"
 }
 
 # Create .gitignore file
 if [[ ! -f "$IGNORED" ]]; then
-    touch "$IGNORED"
-    commit "Add .gitignore file"
+  touch "$IGNORED"
+  commit "Add .gitignore file"
 fi
 
 # Sort .gitignore entries
 LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
 if [[ -n $(git diff "$IGNORED") ]]; then
-    commit "Sort .gitignore file"
+  commit "Sort .gitignore file"
 fi
 
 # Ignore $target file
 echo "${target}" >> "$IGNORED"
 LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
 if [[ -d "${target}" ]]; then
-    commit "Ignore ${target} files"
+  commit "Ignore ${target} files"
 else
-    commit "Ignore ${target} file"
+  commit "Ignore ${target} file"
 fi

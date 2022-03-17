@@ -3,11 +3,11 @@
 # docker-compose completion
 if [ -f "/usr/share/bash-completion/completions/docker-compose" ]; then
   # shellcheck source=/dev/null
-  source "/usr/share/bash-completion/completions/docker-compose";
+  source "/usr/share/bash-completion/completions/docker-compose"
 fi
 
 # git completion
 if [ -f "/usr/share/git/completion/git-completion.bash" ]; then
   # shellcheck source=/dev/null
-  source "/usr/share/git/completion/git-completion.bash";
+  source "/usr/share/git/completion/git-completion.bash"
 fi
