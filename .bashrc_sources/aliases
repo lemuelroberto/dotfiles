@@ -29,3 +29,6 @@ alias gl="git log"
 
 # Copy working directory
 alias cpwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+
+# Go to directory from clipboard
+alias gpwd='cd $(xsel -ob)'
