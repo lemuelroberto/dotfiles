@@ -15,6 +15,17 @@ fi
 
 readonly IGNORED=".gitignore"
 
+commit() {
+  git add "$IGNORED"
+  git commit -m "$1"
+}
+
+# Create .gitignore file
+if [[ ! -f "$IGNORED" ]]; then
+  touch "$IGNORED"
+  commit "Add .gitignore file"
+fi
+
 # Exit if .gitignore file has changes to be staged
 if [[ -n $(git diff "$IGNORED") ]]; then
   exit_with_msg "error: you have changes to be staged"
@@ -32,17 +43,6 @@ if [[ -d "${target}" ]]; then
   target="${target##\/}" # Remove slash (/) from the beginning
   target="${target%%\/}" # Remove slash (/) from the ending
   target="${target}/"    # Add slash to the ending
-fi
-
-commit() {
-  git add "$IGNORED"
-  git commit -m "$1"
-}
-
-# Create .gitignore file
-if [[ ! -f "$IGNORED" ]]; then
-  touch "$IGNORED"
-  commit "Add .gitignore file"
 fi
 
 # Sort .gitignore entries
