@@ -3,15 +3,67 @@
 set -euEo pipefail
 trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
 
+usage="
+Usage: $(basename "$0") [OPTIONS] <relative/path/to/ignore>
+
+OPTIONS:
+  -h, --help                   Print this help
+"
+
+help_and_exit() {
+  echo "$usage"
+  exit 0
+}
+
 exit_with_msg() {
   echo >&2 "$1"
   exit 1
 }
 
+exit_with_msg_and_help() {
+  echo >&2 "$1"
+  echo >&2 "$usage"
+  exit 1
+}
+
+# Read arguments
+# Read the getopt manual using man getopt
+# Learn from examples in /usr/share/doc/util-linux/
+opts=$(
+  getopt \
+    --name "$(basename "$0")" \
+    --longoptions "help" \
+    --options "h" \
+    -- "$@"
+)
+
+# The eval is required as arguments returned by getopt are quoted.
+eval set -- "$opts"
+unset opts
+
+while true; do
+  case "$1" in
+    -h | --help)
+      help_and_exit
+      ;;
+
+    --)
+      shift
+      break
+      ;;
+
+    *)
+      exit_with_msg "getopt: unexpected error: $1"
+      ;;
+  esac
+done
+
 # Exit if a target file was not provided
 if [[ "$#" -ne 1 ]]; then
-  exit_with_msg "error: you must provide exactly one parameter with the target file"
+  exit_with_msg_and_help "error: you must provide exactly one file to ignore"
 fi
+
+readonly target="$1"
 
 readonly IGNORED=".gitignore"
 
@@ -35,8 +87,6 @@ fi
 if [[ -n $(git diff --staged) ]]; then
   exit_with_msg "error: you have changes to be committed"
 fi
-
-target="$1"
 
 # Normalize directories paths
 if [[ -d "${target}" ]]; then
