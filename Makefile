@@ -1,5 +1,5 @@
 BASH_SCRIPTS = .bash_profile .bashrc .bashrc_sources/* bin/* install
-lint-shell: shellcheck shfmt-edit
+lint-shell: shellcheck shfmt-diff shfmt-edit
 
 shellcheck:
 	shellcheck $(BASH_SCRIPTS)
