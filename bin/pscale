@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
+
+docker run \
+  --env HOME=/tmp \
+  --interactive \
+  --name pscale-cli \
+  --publish 3306:3306/tcp \
+  --rm \
+  --tty \
+  --user "$(id -u):":"$(id -g)" \
+  --volume "$HOME"/.config/planetscale:/tmp/.config/planetscale \
+  planetscale/pscale:latest "$@"
