@@ -11,3 +11,14 @@ if [ -f "/usr/share/git/completion/git-completion.bash" ]; then
   # shellcheck source=/dev/null
   source "/usr/share/git/completion/git-completion.bash"
 fi
+
+function _make_complete() {
+  dir=$(pwd)
+  gregex="^[a-zA-Z0-9_.-]+:([^=]|$)"
+  grep -oEh "$gregex" "${dir}"/{?akefile,*.mk} 2> /dev/null \
+    | grep -v ".PHONY" \
+    | sed "s/[^a-zA-Z0-9_.-]*$//" \
+    | sort
+}
+
+complete -W "$(_make_complete)" make
