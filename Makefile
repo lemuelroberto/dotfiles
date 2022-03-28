@@ -21,3 +21,6 @@ install:
 
 sjq-vscode-settings:
 	sjq ".config/Code - OSS/User/settings.json"
+
+docker-upgrade:
+	docker pull planetscale/pscale:latest
