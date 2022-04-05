@@ -63,7 +63,7 @@ if [[ "$#" -ne 1 ]]; then
   exit_with_msg_and_help "error: you must provide exactly one file to ignore"
 fi
 
-readonly target="$1"
+target="$1"
 
 readonly IGNORED=".gitignore"
 
