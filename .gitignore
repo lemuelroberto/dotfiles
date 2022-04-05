@@ -5,12 +5,14 @@
 .config
 .gnupg/
 .go/
+.irpf/
 .java/
 .lesshst
 .local/
 .mozilla/
 .npm/
 .pki/
+.rfb/
 .ssh/
 .vagrant.d/
 .viminfo
@@ -20,6 +22,7 @@
 .zoom/
 dotfiles/
 Downloads/
+ProgramasRFB/
 repositories/
 VirtualBox VMs/
 workspace/
