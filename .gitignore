@@ -5,6 +5,7 @@
 .config
 .gnupg/
 .go/
+.java/
 .lesshst
 .local/
 .mozilla/
