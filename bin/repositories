@@ -123,6 +123,7 @@ clone_repositories() {
 
 if [[ -n ${backup+x} && "$backup" = true ]]; then
   (print_repositories "$root") > "$file"
+  LC_COLLATE="en_US.UTF-8" sort -fV -o "$file" "$file"
 elif [[ -n ${clone+x} && "$clone" = true ]]; then
   if [[ ! -f "$file" ]]; then
     exit_with_msg "error: file $file does not exists"
