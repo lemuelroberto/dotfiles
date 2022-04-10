@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
+
+usage="
+Usage: $(basename "$0") [OPTIONS]
+
+PARAMETERS:
+  -r, --root <root>            Required path to repositories root
+  -f, --file <file>            Required path to backup or to restore from
+  -c, --clone                  Clone git repositories from file
+  -b, --backup                 Backup git repositories to file
+  -h, --help                   Print this help
+"
+
+help_and_exit() {
+  echo "$usage"
+  exit 0
+}
+
+exit_with_msg() {
+  echo >&2 "$1"
+  exit 1
+}
+
+exit_with_msg_and_help() {
+  echo >&2 "$1"
+  echo >&2 "$usage"
+  exit 1
+}
+
+# Read arguments
+# Read the getopt manual using man getopt
+# Learn from examples in /usr/share/doc/util-linux/
+opts=$(
+  getopt \
+    --name "$(basename "$0")" \
+    --longoptions "root:,file:,clone,backup,help" \
+    --options "r:f:cbh" \
+    -- "$@"
+)
+
+# The eval is required as arguments returned by getopt are quoted.
+eval set -- "$opts"
+unset opts
+
+while true; do
+  case "$1" in
+    -r | --root)
+      readonly root="$2"
+      shift 2
+      continue
+      ;;
+
+    -f | --file)
+      readonly file="$2"
+      shift 2
+      continue
+      ;;
+
+    -c | --clone)
+      readonly clone=true
+      shift 1
+      continue
+      ;;
+
+    -b | --backup)
+      readonly backup=true
+      shift 1
+      continue
+      ;;
+
+    -h | --help)
+      help_and_exit
+      ;;
+
+    --)
+      shift
+      break
+      ;;
+
+    *)
+      exit_with_msg "getopt: unexpected error: $1"
+      ;;
+  esac
+done
+
+if [[ -z ${root+x} ]]; then
+  exit_with_msg_and_help "error: you must provide the root option"
+fi
+
+if [[ -z ${file+x} ]]; then
+  exit_with_msg_and_help "error: you must provide the file option"
+fi
+
+if [[ -z ${clone+x} && -z ${backup+x} ]]; then
+  exit_with_msg_and_help "error: you must provide either the clone or backup option"
+fi
+
+print_repositories() {
+  declare -r repository_root="$1"
+
+  cd "$repository_root" || exit 1
+
+  while IFS= read -r -d '' directory; do
+    (
+      cd "$directory"
+      local url
+      url=$(git remote get-url origin)
+      echo "$url $directory"
+    )
+  done < <(find . -mindepth 2 -maxdepth 2 -type d -print0)
+}
+
+clone_repositories() {
+  declare -r repository_root="$1"
+  declare -r repository_list="$2"
+
+  cd "$repository_root" || exit 1
+  xargs -a "$repository_list" -L 1 git clone
+}
+
+if [[ -n ${backup+x} && "$backup" = true ]]; then
+  (print_repositories "$root") > "$file"
+elif [[ -n ${clone+x} && "$clone" = true ]]; then
+  if [[ ! -f "$file" ]]; then
+    exit_with_msg "error: file $file does not exists"
+  fi
+  (clone_repositories "$root" "$file")
+fi

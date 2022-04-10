@@ -13,11 +13,13 @@ shfmt-diff:
 backup:
 	vscode-extensions -b -f .config/backup/vscode-extensions.list
 	yay-backup -b -f .config/backup/yay-packages.list
+	repositories -b -r repositories/ -f .config/backup/repositories.list
 
 .PHONY: install
 install:
 	vscode-extensions -i -f .config/backup/vscode-extensions.list
 	yay-backup -i -f .config/backup/yay-packages.list
+	repositories -c -r repositories/ -f .config/backup/repositories.list
 
 sjq-vscode-settings:
 	sjq ".config/Code - OSS/User/settings.json"
