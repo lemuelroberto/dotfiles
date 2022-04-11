@@ -10,13 +10,12 @@ shfmt-edit:
 shfmt-diff:
 	shfmt -i 2 -ci -bn -sr -l -d $(BASH_SCRIPTS)
 
-backup:
+backup-untracked:
 	vscode-extensions -b -f .config/backup/vscode-extensions.list
 	yay-backup -b -f .config/backup/yay-packages.list
 	repositories -b -r repositories/ -f .config/backup/repositories.list
 
-.PHONY: install
-install:
+install-untracked:
 	vscode-extensions -i -f .config/backup/vscode-extensions.list
 	yay-backup -i -f .config/backup/yay-packages.list
 	repositories -c -r repositories/ -f .config/backup/repositories.list
