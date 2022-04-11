@@ -2,7 +2,7 @@
 .bash_history
 .cache/
 .calc_history
-.config
+.config/
 .gnupg/
 .go/
 .irpf/
