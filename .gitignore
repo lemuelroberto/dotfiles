@@ -3,7 +3,6 @@
 .cache/
 .calc_history
 .config
-.config/backup/
 .gnupg/
 .go/
 .irpf/
