@@ -18,6 +18,7 @@
   "php.validate.enable": true,
   "php.validate.executablePath": "/usr/bin/php",
   "php.validate.run": "onSave",
+  "redhat.telemetry.enabled": false,
   "terminal.integrated.profiles.linux": {
     "bash": {
       "args": [
