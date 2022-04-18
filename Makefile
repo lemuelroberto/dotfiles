@@ -11,14 +11,14 @@ shfmt-diff:
 	shfmt -i 2 -ci -bn -sr -l -d $(BASH_SCRIPTS)
 
 backup-untracked:
-	vscode-extensions -b -f .config/backup/vscode-extensions.list
-	yay-backup -b -f .config/backup/yay-packages.list
-	repositories -b -r repositories/ -f .config/backup/repositories.list
+	vscode-extensions -b -f .config/private/vscode-extensions.list
+	yay-backup -b -f .config/private/yay-packages.list
+	repositories -b -r repositories/ -f .config/private/repositories.list
 
 install-untracked:
-	vscode-extensions -i -f .config/backup/vscode-extensions.list
-	yay-backup -i -f .config/backup/yay-packages.list
-	repositories -c -r repositories/ -f .config/backup/repositories.list
+	vscode-extensions -i -f .config/private/vscode-extensions.list
+	yay-backup -i -f .config/private/yay-packages.list
+	repositories -c -r repositories/ -f .config/private/repositories.list
 
 sjq-vscode-settings:
 	sjq ".config/Code - OSS/User/settings.json"
