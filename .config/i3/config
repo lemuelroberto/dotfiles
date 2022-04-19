@@ -203,3 +203,6 @@ exec xrdb -merge $HOME/.Xresources
 
 # Set background
 exec --no-startup-id feh --bg-fill --no-fehbg ${HOME}/.config/i3/img/arquivei.png
+
+# Load authentication agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
