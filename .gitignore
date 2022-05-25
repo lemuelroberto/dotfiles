@@ -15,6 +15,7 @@
 .rfb/
 .ssh/
 .vagrant.d/
+.vim/.netrwhist
 .viminfo
 .vscode-oss/
 .vscode/
