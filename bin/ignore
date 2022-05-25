@@ -96,14 +96,14 @@ if [[ -d "${target}" ]]; then
 fi
 
 # Sort .gitignore entries
-LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
+LC_ALL=C sort -f -o "$IGNORED" "$IGNORED"
 if [[ -n $(git diff "$IGNORED") ]]; then
   commit "Sort .gitignore file"
 fi
 
 # Ignore $target file
 echo "${target}" >> "$IGNORED"
-LC_COLLATE="en_US.UTF-8" sort -fV -o "$IGNORED" "$IGNORED"
+LC_ALL=C sort -f -o "$IGNORED" "$IGNORED"
 if [[ -d "${target}" ]]; then
   commit "Ignore ${target} files"
 else
