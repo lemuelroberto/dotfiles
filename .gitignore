@@ -3,6 +3,7 @@
 .cache/
 .calc_history
 .config/
+.docker/
 .gnupg/
 .go/
 .irpf/
