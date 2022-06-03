@@ -13,6 +13,7 @@
 .mozilla/
 .npm/
 .pki/
+.receitanet/
 .rfb/
 .ssh/
 .vagrant.d/
