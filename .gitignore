@@ -5,6 +5,7 @@
 .config/
 .docker/
 .emacs.d/auto-save-list/
+.emacs.d/tutorial/
 .gnupg/
 .go/
 .irpf/
