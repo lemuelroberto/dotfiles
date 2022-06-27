@@ -4,6 +4,7 @@
 .calc_history
 .config/
 .docker/
+.emacs.d/auto-save-list/
 .gnupg/
 .go/
 .irpf/
