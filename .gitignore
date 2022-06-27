@@ -13,6 +13,7 @@
 .mozilla/
 .npm/
 .pki/
+.python_history
 .receitanet/
 .rfb/
 .ssh/
