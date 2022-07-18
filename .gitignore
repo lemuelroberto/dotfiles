@@ -18,6 +18,7 @@
 .python_history
 .receitanet/
 .rfb/
+.sqlite_history
 .ssh/
 .vagrant.d/
 .vim/.netrwhist
