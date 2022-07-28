@@ -20,6 +20,9 @@ for file in .bashrc_sources/*; do
 done
 unset file
 
+# Source private aliases
+source ~/.config/private/aliases
+
 # Go to directory using cd if command is a directory
 shopt -s autocd
 
