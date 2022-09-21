@@ -27,3 +27,5 @@
 [url "git@bitbucket.org:"]
     insteadOf = https://bitbucket.org/
     pushInsteadOf = https://bitbucket.org/
+[init]
+	defaultBranch = main
