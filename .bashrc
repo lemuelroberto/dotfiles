@@ -20,8 +20,14 @@ for file in .bashrc_sources/*; do
 done
 unset file
 
-# Source private aliases
-source ~/.config/private/aliases
+# Source private bashrc_sources
+for file in ~/.config/private/bashrc_sources/*; do
+  if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+    # shellcheck source=/dev/null
+    source "$file"
+  fi
+done
+unset file
 
 # Go to directory using cd if command is a directory
 shopt -s autocd
