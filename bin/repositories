@@ -105,10 +105,18 @@ print_repositories() {
 
   while IFS= read -r -d '' directory; do
     (
-      cd "$directory"
-      local url
-      url=$(git remote get-url origin)
-      echo "$url $directory"
+      { # try
+        cd "$directory"
+        local url
+        url=$(git remote get-url origin 2> /dev/null)
+        if [[ ! -z "$url" ]]; then
+          echo "$url $directory"
+        else
+          echo >&2 "error: missing remote url: $(pwd)"
+        fi
+      } || { # catch
+        true
+      }
     )
   done < <(find . -mindepth 2 -maxdepth 2 -type d -print0)
 }
