@@ -29,6 +29,7 @@
 .vscode-oss/
 .vscode/
 .Xauthority
+.yarn/bin/
 .yarnrc
 .zoom/
 dotfiles/
