@@ -16,6 +16,7 @@
 .lesshst
 .local/
 .mozilla/
+.node_repl_history
 .npm/
 .pki/
 .python_history
