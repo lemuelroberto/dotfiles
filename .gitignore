@@ -18,6 +18,7 @@
 .local/
 .mozilla/
 .node_repl_history
+.npm-packages/
 .npm/
 .pki/
 .python_history
