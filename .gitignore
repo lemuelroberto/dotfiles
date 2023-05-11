@@ -2,6 +2,7 @@
 .bash_history
 .cache/
 .calc_history
+.cargo/
 .config/
 .docker/
 .emacs.d/auto-save-list/
