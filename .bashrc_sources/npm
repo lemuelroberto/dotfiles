@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Reference: https://stackoverflow.com/a/13021677/5111444
+
+mkdir -p "$HOME/.npm-packages"
+
+# Tell our environment about user-installed node tools
+PATH="$HOME/.npm-packages/bin:$PATH"
+
+# Tell Node about these packages
+NODE_PATH="$HOME/.npm-packages/lib/node_modules:$NODE_PATH"
