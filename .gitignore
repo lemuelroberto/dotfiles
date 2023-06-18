@@ -12,6 +12,7 @@
 .gsutil/
 .irpf/
 .java/
+.kcompose/
 .kube/
 .lemminx/
 .lesshst
