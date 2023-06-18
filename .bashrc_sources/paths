@@ -10,5 +10,8 @@ export PATH=/usr/local/go/bin:${GOBIN}:${PATH}
 # Add ~/bin to path
 export PATH=${HOME}/bin:${PATH}
 
+# Add ~/.local/bin to path
+export PATH=${HOME}/.local/bin:${PATH}
+
 # Add ~/.screenlayout to path
 export PATH=${HOME}/.screenlayout:${PATH}
