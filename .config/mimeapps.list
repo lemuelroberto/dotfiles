@@ -28,3 +28,4 @@ application/pdf=org.gnome.Evince.desktop;
 video/mp4=vlc.desktop;
 image/svg+xml=org.gnome.eog.desktop;
 text/csv=code-oss.desktop;
+text/xml=firefox.desktop;
