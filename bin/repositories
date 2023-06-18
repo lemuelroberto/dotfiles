@@ -109,7 +109,7 @@ print_repositories() {
         cd "$directory"
         local url
         url=$(git remote get-url origin 2> /dev/null)
-        if [[ ! -z "$url" ]]; then
+        if [[ -n "$url" ]]; then
           echo "$url $directory"
         else
           echo >&2 "error: missing remote url: $(pwd)"
