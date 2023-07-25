@@ -29,6 +29,7 @@
 .rfb/
 .sqlite_history
 .ssh/
+.terraform.d/
 .vagrant.d/
 .vim/.netrwhist
 .viminfo
