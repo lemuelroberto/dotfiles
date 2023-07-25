@@ -1,6 +1,7 @@
 .aws/
 .bashrc_sources/private
 .bash_history
+.bendsql_history
 .cache/
 .calc_history
 .cargo/
