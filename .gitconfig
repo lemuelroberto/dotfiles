@@ -29,3 +29,5 @@
     pushInsteadOf = https://bitbucket.org/
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
