@@ -30,5 +30,10 @@
   "window.zoomLevel": 2,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "files.associations": {
+    "*.html": "html",
+    "*.tml": "toml"
   }
 }
