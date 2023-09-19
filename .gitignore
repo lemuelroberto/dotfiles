@@ -33,6 +33,7 @@
 .sbt/
 .sqlite_history
 .ssh/
+.swt/
 .terraform.d/
 .vagrant.d/
 .vim/.netrwhist
