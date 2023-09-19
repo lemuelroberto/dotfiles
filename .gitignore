@@ -8,6 +8,7 @@
 .cargo/
 .config/
 .docker/
+.eclipse/
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
 .gnupg/
