@@ -15,6 +15,7 @@
 .go/
 .gsutil/
 .irpf/
+.ivy2/
 .java/
 .kcompose/
 .kube/
