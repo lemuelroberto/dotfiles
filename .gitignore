@@ -30,6 +30,7 @@
 .python_history
 .receitanet/
 .rfb/
+.sbt/
 .sqlite_history
 .ssh/
 .terraform.d/
