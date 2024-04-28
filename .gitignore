@@ -1,6 +1,7 @@
 .aws/
 .bashrc_sources/private
 .bash_history
+.bash_history-*.tmp
 .bendsql_history
 .boto
 .cache/
