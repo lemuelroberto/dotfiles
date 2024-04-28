@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
+
+sleep '30m' && paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
