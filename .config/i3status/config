@@ -11,9 +11,9 @@ general {
         interval = 5
 }
 
-#order += "battery 0"
+order += "battery 0"
 #order += "cpu_temperature 0"
-#order += "disk /"
+order += "disk /"
 #order += "run_watch VPN"
 order += "wireless wlan0"
 order += "ethernet enp9s0"
