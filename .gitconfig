@@ -10,24 +10,28 @@
     amend = commit --amend
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
 
 [pull]
     # Rebase on pull
-	rebase = true
+    rebase = true
 
 # Enforce SSH
 [url "git@github.com:"]
     insteadOf = https://github.com/
     pushInsteadOf = https://github.com/
+
 [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/
     pushInsteadOf = https://gitlab.com/
+
 [url "git@bitbucket.org:"]
     insteadOf = https://bitbucket.org/
     pushInsteadOf = https://bitbucket.org/
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
 [gpg]
-	format = ssh
+    format = ssh
