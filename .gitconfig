@@ -1,6 +1,7 @@
 [user]
     email = lemuelroberto@gmail.com
     name = Lemuel Roberto Bonifácio
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+g2Pxbs/hLbmxll9DVc+Bbolz6S6LHWldsv0u79V0i
 
 [core]
     editor = vim
@@ -35,3 +36,9 @@
 
 [gpg]
     format = ssh
+
+[gpg "ssh"]
+    program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+    gpgsign = true
