@@ -16,7 +16,7 @@ order += "battery 0"
 order += "disk /"
 #order += "run_watch VPN"
 order += "wireless wlp2s0"
-order += "ethernet enp9s0"
+#order += "ethernet enp9s0"
 order += "volume master"
 order += "tztime local"
 
