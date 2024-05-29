@@ -32,3 +32,5 @@ alias cpwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 
 # Go to directory from clipboard
 alias gpwd='cd $(xsel -ob)'
+
+alias code='code --disable-gpu'
