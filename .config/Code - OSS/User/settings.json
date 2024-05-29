@@ -35,5 +35,6 @@
   "files.associations": {
     "*.html": "html",
     "*.tml": "toml"
-  }
+  },
+  "prisma.showPrismaDataPlatformNotification": false
 }
