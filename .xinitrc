@@ -14,4 +14,6 @@ fi
 # Set brazilian keyboard layout
 setxkbmap -layout br
 
+export GSK_RENDERER=cairo
+
 exec i3
