@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euEo pipefail
+trap 'echo "${BASH_SOURCE:-unknown}:${LINENO:-unknown}: $BASH_COMMAND";' ERR
+
+head_ref=$(git branch --no-color --show-current)
+head_sha=$(git rev-parse --short --revs-only HEAD)
+
+event=$(
+  cat <<- JSON
+{
+  "pull_request": {
+    "head": {
+      "ref": "${head_ref}",
+      "sha": "${head_sha}"
+    },
+    "base": {
+      "ref": "main"
+    }
+  }
+}
+JSON
+)
+
+echo "$event"
