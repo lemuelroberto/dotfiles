@@ -195,7 +195,7 @@ bindsym $mod+Print exec xfce4-screenshooter
 
 # Custom app keybinds
 bindsym $mod+b exec firefox &
-bindsym $mod+c exec code &
+bindsym $mod+c exec code --disable-gpu &
 bindsym $mod+Shift+a exec cnpj
 
 # Load X resources config
