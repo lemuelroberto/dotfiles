@@ -9,3 +9,31 @@ PATH="$HOME/.npm-packages/bin:$PATH"
 
 # Tell Node about these packages
 NODE_PATH="$HOME/.npm-packages/lib/node_modules:$NODE_PATH"
+
+# source nvm init script
+#
+# You need to source nvm before you can use it. Do one of the following
+# or similar depending on your shell (and then restart your shell):
+#
+#   echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
+#   echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
+#
+# You can now install node.js versions (e.g. nvm install 10) and
+# activate them (e.g. nvm use 10).
+#
+# init-nvm.sh is a convenience script which does the following:
+#
+# [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+# source /usr/share/nvm/nvm.sh
+# source /usr/share/nvm/bash_completion
+# source /usr/share/nvm/install-nvm-exec
+#
+# You may wish to customize and put these lines directly in your
+# .bashrc (or similar) if, for example, you would like an NVM_DIR
+# other than ~/.nvm or you don't want bash completion.
+#
+# See the nvm readme for more information: https://github.com/creationix/nvm
+if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
+  # shellcheck source=/dev/null
+  source "/usr/share/nvm/init-nvm.sh"
+fi
