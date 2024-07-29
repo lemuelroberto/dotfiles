@@ -28,6 +28,7 @@
 .node_repl_history
 .npm-packages/
 .npm/
+.nvm/
 .pki/
 .python_history
 .receitanet/
