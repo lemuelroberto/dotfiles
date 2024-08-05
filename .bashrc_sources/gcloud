@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Instructions from AUR google-cloud-cli package installation
+# Source /opt/google-cloud-cli/path.bash.inc in your profile to add the
+# Google Cloud SDK command line tools to your $PATH.
+if [ -f "/opt/google-cloud-cli/path.bash.inc" ]; then
+  # shellcheck source=/dev/null
+  source "/opt/google-cloud-cli/path.bash.inc"
+fi
+
+
+# Instructions from AUR google-cloud-cli package installation
+# Source /opt/google-cloud-cli/completion.bash.inc in your profile to enable shell
+# command completion for gcloud.
+if [ -f "/opt/google-cloud-cli/completion.bash.inc" ]; then
+  # shellcheck source=/dev/null
+  source "/opt/google-cloud-cli/completion.bash.inc"
+fi
