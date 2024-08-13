@@ -37,3 +37,7 @@ shopt -s cdspell
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
+
+HISTSIZE=-1
+HISTFILESIZE=-1
+HISTCONTROL=erasedups
