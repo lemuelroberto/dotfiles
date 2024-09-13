@@ -9,6 +9,7 @@
 .calc_history
 .calc_history-*.tmp
 .cargo/
+.cdk/
 .config/
 .docker/
 .eclipse/
