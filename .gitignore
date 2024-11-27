@@ -13,6 +13,7 @@
 .config/
 .docker/
 .eclipse/
+.electrum/
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
 .gnupg/
