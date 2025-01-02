@@ -36,5 +36,11 @@
     "*.html": "html",
     "*.tml": "toml"
   },
-  "prisma.showPrismaDataPlatformNotification": false
+  "prisma.showPrismaDataPlatformNotification": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true
+  },
+  "search.useIgnoreFiles": true
 }
