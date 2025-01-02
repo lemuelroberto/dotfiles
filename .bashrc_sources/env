@@ -24,3 +24,7 @@ export GPG_TTY
 
 # Ignore all specific platform requirements while running composer
 export COMPOSER_IGNORE_PLATFORM_REQS=1
+
+# Try to fix Intel GPU issues
+export MESA_LOADER_DRIVER_OVERRIDE=i965
+
