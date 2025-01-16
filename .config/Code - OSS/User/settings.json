@@ -42,5 +42,8 @@
     "**/.hg": true,
     "**/.svn": true
   },
-  "search.useIgnoreFiles": true
+  "search.useIgnoreFiles": true,
+  "editor.pasteAs.preferences": [
+    "uri.path.absolute"
+  ]
 }
