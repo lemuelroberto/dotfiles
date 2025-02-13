@@ -10,6 +10,21 @@
     # Amend the currently staged files to the latest commit
     amend = commit --amend
 
+    # Fixup the first branch commit and push to remote
+    fp = "!f() { \
+        merge_base=$(git merge-base main HEAD); \
+        if [[ "${merge_base}" == "$(git rev-parse HEAD)" ]]; then \
+            echo "Current branch is identical to main"; \
+        else \
+            first_commit=$(git rev-list --reverse "${merge_base}"..HEAD | head -n 1); \
+            git add . && \
+            git commit --fixup=${first_commit} && \
+            git push; \
+        fi; \
+    }; \
+    f; \
+    unset f;"
+
 [help]
     # Automatically correct and execute mistyped commands
     autocorrect = 1
