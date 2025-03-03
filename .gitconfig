@@ -11,7 +11,7 @@
     amend = commit --amend
 
     # Fixup the first branch commit and push to remote
-    fp = "!f() { \
+    ffp = "!f() { \
         merge_base=$(git merge-base main HEAD); \
         if [[ "${merge_base}" == "$(git rev-parse HEAD)" ]]; then \
             echo "Current branch is identical to main"; \
