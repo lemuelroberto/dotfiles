@@ -13,6 +13,22 @@
     # Log abbreviated commit hash and subject
     loghs = log --pretty=format:'%h %s'
 
+    # Fixup the newest non-fixup commit and push to remote
+    fixup = "!f() { \
+        if [ -z "$(git status --porcelain)" ]; then \
+            echo "No changes to commit."; \
+            return 1; \
+        fi; \
+        hash=$(git loghs | grep -v -F "fixup!" | head -n 1 | cut -d' ' -f1); \
+        if [ -n "$hash" ]; then \
+            echo "Creating fixup for commit $hash"; \
+            git add -A && git commit --fixup=$hash && git push; \
+        else \
+            echo "No suitable commit found to fixup."; \
+            return 1; \
+        fi; \
+    }; f; unset f;"
+
     # Fixup the first branch commit and push to remote
     ffp = "!f() { \
         merge_base=$(git merge-base main HEAD); \
