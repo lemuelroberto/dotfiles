@@ -10,6 +10,9 @@
     # Amend the currently staged files to the latest commit
     amend = commit --amend
 
+    # Log abbreviated commit hash and subject
+    loghs = log --pretty=format:'%h %s'
+
     # Fixup the first branch commit and push to remote
     ffp = "!f() { \
         merge_base=$(git merge-base main HEAD); \
