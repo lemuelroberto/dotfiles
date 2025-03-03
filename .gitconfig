@@ -26,8 +26,8 @@
     unset f;"
 
 [help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
+    # Disable automatic correction for mistyped commands
+    autocorrect = 0
 
 [pull]
     # Rebase on pull
