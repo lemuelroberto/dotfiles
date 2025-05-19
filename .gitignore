@@ -51,6 +51,7 @@
 .vscode/
 .wget-hsts
 .Xauthority
+.yarn/
 .yarn/bin/
 .yarnrc
 .zoom/
