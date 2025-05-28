@@ -13,5 +13,8 @@ export PATH=${HOME}/bin:${PATH}
 # Add ~/.local/bin to path
 export PATH=${HOME}/.local/bin:${PATH}
 
+# Add ~/.config/composer/vendor/bin to path
+export PATH=${HOME}/.config/composer/vendor/bin:${PATH}
+
 # Add ~/.screenlayout to path
 export PATH=${HOME}/.screenlayout:${PATH}
