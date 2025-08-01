@@ -14,6 +14,7 @@
 .cursor/
 .docker/
 .eclipse/
+.elasticbeanstalk/
 .electrum/
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
