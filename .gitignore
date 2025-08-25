@@ -58,6 +58,7 @@
 .yarn/bin/
 .yarnrc
 .zoom/
+Android/
 dotfiles/
 Downloads/
 obs-recordings/
