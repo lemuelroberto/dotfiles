@@ -18,6 +18,7 @@
 .electrum/
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
+.expo/
 .gnupg/
 .go/
 .gsutil/
