@@ -23,6 +23,7 @@
 .gnupg/
 .go/
 .gsutil/
+.hplip/
 .irpf/
 .ivy2/
 .java/
