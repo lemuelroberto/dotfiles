@@ -6,6 +6,7 @@
 .bash_history-*.tmp
 .bendsql_history
 .boto
+.bun/
 .cache/
 .calc_history
 .calc_history-*.tmp
