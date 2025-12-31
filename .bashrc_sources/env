@@ -28,3 +28,8 @@ export COMPOSER_IGNORE_PLATFORM_REQS=1
 # Try to fix Intel GPU issues
 export MESA_LOADER_DRIVER_OVERRIDE=i965
 
+# Setup SSH agent
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+# Config Android Studio home
+export ANDROID_HOME=~/Android/Sdk
