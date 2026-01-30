@@ -40,6 +40,7 @@
 .npm/
 .nvm/
 .pki/
+.psql_history
 .python_history
 .receitanet/
 .rfb/
