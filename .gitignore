@@ -12,6 +12,7 @@
 .calc_history-*.tmp
 .cargo/
 .cdk/
+.claude/
 .config/
 .cursor/
 .docker/
