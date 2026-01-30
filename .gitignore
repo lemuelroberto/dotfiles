@@ -21,6 +21,7 @@
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
 .expo/
+.gemini/
 .gnupg/
 .go/
 .gsutil/
