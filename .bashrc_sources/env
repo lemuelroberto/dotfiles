@@ -7,7 +7,7 @@ export WORKSPACE=$HOME/workspace
 export REPOSITORIES=$HOME/repositories
 
 # Define default text editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Define text window's capabilities
 export TERM=xterm-256color
