@@ -25,8 +25,8 @@ export GPG_TTY
 # Ignore all specific platform requirements while running composer
 export COMPOSER_IGNORE_PLATFORM_REQS=1
 
-# Try to fix Intel GPU issues
-export MESA_LOADER_DRIVER_OVERRIDE=i965
+# Fix Intel GPU driver selection (Raptor Lake needs iris, not i965)
+export MESA_LOADER_DRIVER_OVERRIDE=iris
 
 # Setup SSH agent
 export SSH_AUTH_SOCK=~/.1password/agent.sock

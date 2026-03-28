@@ -5,6 +5,9 @@
 xset s off
 xset dpms 0 0 0
 
+# makes the EGL/GBM path work
+export MESA_LOADER_DRIVER_OVERRIDE=iris
+
 systemctl --user import-environment DISPLAY XAUTHORITY
 
 if which dbus-update-activation-environment >/dev/null 2>&1; then
