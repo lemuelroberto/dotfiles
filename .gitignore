@@ -58,6 +58,7 @@
 .vagrant.d/
 .vim/.netrwhist
 .viminfo
+.vscode-oss-shared/
 .vscode-oss/
 .vscode/
 .wget-hsts
