@@ -17,6 +17,7 @@
 .claude/
 .config/
 .cursor/
+.dart-cli-completion/
 .dart-tool/
 .dartServer/
 .docker/
