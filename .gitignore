@@ -45,6 +45,7 @@
 .nvm/
 .pki/
 .psql_history
+.pub-cache/
 .python_history
 .railway/
 .receitanet/
