@@ -46,6 +46,7 @@
 .pki/
 .psql_history
 .python_history
+.railway/
 .receitanet/
 .rfb/
 .sbt/
