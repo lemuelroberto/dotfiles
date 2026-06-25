@@ -24,6 +24,7 @@
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
 .expo/
+.flutter-devtools/
 .gemini/
 .gnupg/
 .go/
