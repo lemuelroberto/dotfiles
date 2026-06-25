@@ -17,6 +17,7 @@
 .claude/
 .config/
 .cursor/
+.dartServer/
 .docker/
 .eclipse/
 .elasticbeanstalk/
