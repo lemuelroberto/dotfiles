@@ -23,6 +23,7 @@
 .electrum/
 .emacs.d/auto-save-list/
 .emacs.d/tutorial/
+.emulator_console_auth_token
 .expo/
 .flutter
 .flutter-devtools/
