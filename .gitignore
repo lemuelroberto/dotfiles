@@ -27,6 +27,7 @@
 .gemini/
 .gnupg/
 .go/
+.gradle/
 .gsutil/
 .hplip/
 .irpf/
