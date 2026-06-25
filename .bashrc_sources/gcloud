@@ -8,7 +8,6 @@ if [ -f "/opt/google-cloud-cli/path.bash.inc" ]; then
   source "/opt/google-cloud-cli/path.bash.inc"
 fi
 
-
 # Instructions from AUR google-cloud-cli package installation
 # Source /opt/google-cloud-cli/completion.bash.inc in your profile to enable shell
 # command completion for gcloud.
